@@ -1,0 +1,12 @@
+{
+  "magisk": {
+    "version": "26.1-delta-coui",
+    "versionCode": "26105",
+    "link": "https://color597.github.io/magisk-files/app-release.apk",
+    "note": "https://color597.github.io/magisk-files/note.md"
+  },
+  "stub": {
+    "versionCode": "36",
+    "link": "https://color597.github.io/magisk-files/stub-release.apk"
+  }
+}
