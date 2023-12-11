@@ -1,41 +1,27 @@
-## ColorOS UI style for Magisk Delta
+## ColorOS UI style for Kitsune Mask
 
-- Sync upstream (Update to 24b5daf6-delta)
+- Sync upstream (Update to R6573543B-kitsune)
 
 If you like my work, you can donate me at [Color597's donation document](https://docs.qq.com/doc/DTFdTQm1RcENCVUJ5)
 
-### Diffs to Magisk Delta
+### Diffs to Kitsune Mask
 
 - [Manager] New UI, ColorOS UI style for Magisk Manager
 - [General] Fix ramdisk detect for some MTK devices
 
-## Magisk Delta 24b5daf6-delta Nightly build
+## 26.4-kitsune (R6573543B-kitsune)
 
-- Update to v26.3 (fixed preinit mirror)
-
-Canary and Debug are built from the same source code.  Debug builds have more detailed logs and are suitable for debugging. Canary builds have less logs, are more stable than Debug, and are suitable for most common uses
-
-If you like my work, you can donate me at [PayPal/HuskyDG](http://paypal.me/huskydg)
+**💣 CAUTION! You are using a version of Magisk that is not approved by the official Magisk developer. This version may have risky changes that could damage your device or expose your data. Do not ask for any support or report any problems to the official Magisk channels. If you are using this version without knowing it is unofficial, please switch to the official Magisk at [github.com/topjohnwu/Magisk](https://github.com/topjohnwu/Magisk). USE THIS AT YOUR OWN RISK!**
 
 ### Diffs to official Magisk
 
-- [General] Use "Unmount modules" to manage the visibility of modified files by module
-- [Manager] Support installing into system partition for emulator
-- [General] Copy required files to `/system` for `addon.d`
-- [Manager] Show all supported languages in Language settings for Chinese ROM
-- [Module] Support systemless deleting files or folders for modules
-- [General] Built-in Bootloop Protection to protect system from bootloop by magisk module
-- [General] Tune F2FS driver to fix problem on unencrypted f2fs `/data`
-- [MagiskInit] Support Pre-Init mount that replaces system files before `init` starts
-- [MagiskInit] Support loading custom rc script from pre-init directory
-- [Modules] Support magic mount more partitions (`my_*`, `odm`, `optics`, `prism`)
-- [Zygisk]: Switch to use native bridge by 5ec1cff
-- [Module] Live patch `sepolicy.rule` if it is not found in `sepolicy.rules` directory
-- [MagiskSU] Do not use local socket path
-- [Module] Always inject magisk bins
-- [MagiskInit] Introduce `early-mount.d/v2` to support pre-Init mount per module
+- [App] Added a new feature to install Magisk into `/system` partition for emulators that do not have a boot image. This allows users to root their emulators without modifying the kernel or the ramdisk.
+- [Zygisk] Changed the method of injecting zygote process by using ptrace implementation from [ZygiskNext](https://github.com/Dr-TSNG/ZygiskNext), it is an open source project written by [Dr-TSNG](https://github.com/Dr-TSNG/ZygiskNext) and [5ec1cff](https://github.com/5ec1cff). This is more reliable and compatible with some emulators that ignore `ro.dalvik.vm.native.bridge` property.
+- [General] Enhanced the support for mounting in pre-init for modules. This enables modules to modify the system before the init process starts, which can be useful for some advanced use cases.
+- [General] Implemented a new feature to support deleting file by using indicated whiteout character device, similar to `overlayfs`. This allows modules to delete files from the original system without actually modifying it.
+- [Zygisk] Added support for GrepheneOS Android 14, a privacy and security focused mobile OS with Android app compatibility. This is because the official Magisk does not support it.
+- [General] Restored support for devices with no selinux support, which was removed by the official Magisk. This allows users to use Magisk on devices that do not have selinux enabled.
 
-### Magisk upstream
+### Magisk upstream level
 
-- Sync upstream source code to 350d0d600
-
+- HEAD commit: ecb31ee

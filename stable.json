@@ -1,12 +1,12 @@
 {
   "magisk": {
-    "version": "v26.1-delta",
-    "versionCode": "26100",
-    "link": "https://github.com/HuskyDG/magisk-files/raw/X/v26.1-delta.apk",
-    "note": "https://huskydg.github.io/magisk-files/note_stable.md"
+    "version": "R6573543B-kitsune-coui",
+    "versionCode": "26401",
+    "link": "https://github.com/color597/magisk-files/releases/download/R6573543B-kitsune-coui/R6573543B-kitsune-coui-release.apk",
+    "note": "https://color597.github.io/magisk-files/note.md"
   },
   "stub": {
-    "versionCode": "36",
-    "link": "https://github.com/HuskyDG/magisk-files/raw/X/v26.1-delta.apk"
+    "versionCode": "38",
+    "link": "https://github.com/color597/magisk-files/releases/download/stub-R6573543B-kitsune-coui/R6573543B-kitsune-coui-release.apk"
   }
 }
